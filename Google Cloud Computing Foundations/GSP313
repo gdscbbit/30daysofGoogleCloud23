@@ -3,7 +3,16 @@ Lab Name : Create and Manage Cloud Resources: Challenge Lab
 Step 1: You only need to open the cloud shell for performing this lab. So first of all open the cloud shell. Click on Continue.
 
 Step 2: Select all the commands from this doc and paste in on your notepad.
-Fill in all the information of the required fields as mentioned in the upper screenshot from your lab console situated on the left panel and paste it in 
+
+Field Changes Required --->
+
+export INSTANCE_NAME=
+export ZONE=
+export REGION=
+export PORT=
+export FIREWALL_NAME=
+
+Fill in all the information of the required fields (Only the Upper mentioned Fields) from your lab console situated on the left panel and paste it in 
 the command for executing it in the cloud shell and then run it.
 
 Step 3: Select all the final commands from your notepad then copy it and paste in the cloud shell, hit enter and click on AUTHORIZE. And wait for the command to get executed, 
