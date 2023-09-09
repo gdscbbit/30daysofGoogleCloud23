@@ -1,0 +1,9 @@
+LAB NAME: Compute Engine: Qwik Start - Windows
+Note: You have to do only the “Create a virtual machine instance” task and then click on check my progress to get 100 points.
+Step 1 : In the Cloud Console, on the Navigation menu, click Compute Engine then VM instances, and then click Create Instance.
+Step 2 : Select Zone and Region according to your lab
+Step 3 : In the Machine configuration section, for Series select E2.
+Step 4 : In the Boot disk section, click Change to begin configuring your boot disk.
+Step 5 : Under Operating system select Windows Server and under Version select Windows
+Step 6 : Server 2012 R2 Datacenter, and then click Select. Leave all other settings as their defaults.
+Step 7 : Click Create to create the instance. Now wait for a few couple of seconds and click on check my progress, you will get the full score.
