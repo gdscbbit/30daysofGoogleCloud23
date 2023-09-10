@@ -3,6 +3,7 @@ https://www.youtube.com/watch?v=IPh4s4HrwGQ : youtube link
 code:
 
 Run in cloudshell
+
 ```
 export PROJECT_ID=$(gcloud config get-value project)
 gsutil mb -p $PROJECT_ID -c regional -l us-central1 gs://$PROJECT_ID-bucket
