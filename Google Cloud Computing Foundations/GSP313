@@ -19,7 +19,7 @@ Step 3: Select all the final commands from your notepad then copy it and paste i
 this will take a couple of minutes, and after the command gets executed, click on CHECK MY PROGRESS on every task and you will get a score on every task.
 
 Command →(Given below)
-```
+
 export INSTANCE_NAME=
 export ZONE=
 export REGION=
@@ -122,4 +122,4 @@ gcloud compute forwarding-rules create $FIREWALL_NAME \
 --target-http-proxy http-lb-proxy \
 --ports 80
 gcloud compute forwarding-rules list
- ```
+
