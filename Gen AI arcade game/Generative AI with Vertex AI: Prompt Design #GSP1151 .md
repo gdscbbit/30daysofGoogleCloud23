@@ -1,4 +1,4 @@
-Run in cloudshell
+open in new icognito tab after signing in with lab credentials
 ```
 https://console.cloud.google.com/vertex-ai/workbench/user-managed?
 ```
