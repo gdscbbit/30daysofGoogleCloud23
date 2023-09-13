@@ -8,9 +8,9 @@ export API_KEY=$(gcloud alpha services api-keys get-key-string $KEY_NAME --forma
 export PROJECT_ID=$(gcloud config list --format 'value(core.project)')
 gsutil mb gs://$PROJECT_ID
 git clone https://github.com/gdscbbit/GCPFiles.git
-gsutil cp practice/donuts.png gs://$PROJECT_ID
-gsutil cp practice/selfie.png gs://$PROJECT_ID
-gsutil cp practice/city.png gs://$PROJECT_ID
+gsutil cp GCPFiles/donuts.png gs://$PROJECT_ID
+gsutil cp GCPFiles/selfie.png gs://$PROJECT_ID
+gsutil cp GCPFiles/city.png gs://$PROJECT_ID
 gsutil acl ch -u AllUsers:R gs://$PROJECT_ID/donuts.png
 gsutil acl ch -u AllUsers:R gs://$PROJECT_ID/selfie.png
 gsutil acl ch -u AllUsers:R gs://$PROJECT_ID/city.png
