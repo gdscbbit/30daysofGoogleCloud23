@@ -1,17 +1,16 @@
 Run in cloudshell
 ```
-gcloud alpha services api-keys create --display-name="gdscbbit" 
-KEY_NAME=$(gcloud alpha services api-keys list --format="value(name)" --filter "displayName=gdscbbit")
-export API_KEY=$(gcloud alpha services api-keys get-key-string $KEY_NAME --format="value(keyString)")
-export PROJECT_ID=$(gcloud config list --format 'value(core.project)')
-
+nano arc122.sh
+```
+Paste the following in arc122.sh
+```
 cat > request.json <<EOF
 {
   "requests": [
       {
         "image": {
           "source": {
-              "gcsImageUri": "gs://$PROJECT_ID-bucket/manif-des-sans-papiers.jpg"
+              "gcsImageUri": "gs://$DEVSHELL_PROJECT_ID-bucket/manif-des-sans-papiers.jpg"
           }
         },
         "features": [
@@ -26,8 +25,10 @@ cat > request.json <<EOF
 EOF
 
 curl -s -X POST -H "Content-Type: application/json" --data-binary @request.json  https://vision.googleapis.com/v1/images:annotate?key=${API_KEY}
+
 curl -s -X POST -H "Content-Type: application/json" --data-binary @request.json  https://vision.googleapis.com/v1/images:annotate?key=${API_KEY} -o text-response.json
-gsutil cp text-response.json gs://$PROJECT_ID-bucket
+
+gsutil cp text-response.json gs://$DEVSHELL_PROJECT_ID-bucket
 
 cat > request.json <<EOF
 {
@@ -35,7 +36,7 @@ cat > request.json <<EOF
       {
         "image": {
           "source": {
-              "gcsImageUri": "gs://$PROJECT_ID-bucket/manif-des-sans-papiers.jpg"
+              "gcsImageUri": "gs://$DEVSHELL_PROJECT_ID-bucket/manif-des-sans-papiers.jpg"
           }
         },
         "features": [
@@ -50,5 +51,19 @@ cat > request.json <<EOF
 EOF
 
 curl -s -X POST -H "Content-Type: application/json" --data-binary @request.json  https://vision.googleapis.com/v1/images:annotate?key=${API_KEY} -o landmark-response.json
-gsutil cp landmark-response.json gs://$PROJECT_ID-bucket
+
+gsutil cp landmark-response.json gs://$DEVSHELL_PROJECT_ID-bucket
+
+```
+press ctrl+x, then press y, then press enter
+
+create an api key by going to apis & services> credentials>create>api key> copy
+
+run this now in cloud shell
+```
+export API_KEY=
+
+sudo chmod +x arc122.sh
+
+./arc122.sh
 ```
