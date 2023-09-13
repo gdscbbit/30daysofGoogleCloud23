@@ -3,7 +3,9 @@ CREATE AN API_KEY > APIs & Services > Credentials > Create Credentials > API key
 Run in cloudshell
 ```
 gcloud beta compute ssh  linux-instance
+```
 Press Y Enter > Enter > Enter > Press N Enter
+```
 gcloud services enable apikeys.googleapis.com
 gcloud alpha services api-keys create --display-name="gdscbbit" 
 KEY_NAME=$(gcloud alpha services api-keys list --format="value(name)" --filter "displayName=gdscbbit")
